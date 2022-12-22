@@ -44,28 +44,17 @@ return packer.startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   use "nvim-lua/plenary.nvim"
-  use 'rebelot/kanagawa.nvim'
-  use 'gruvbox-community/gruvbox'
   use "nvim-lua/popup.nvim"
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "akinsho/bufferline.nvim"
   use 'kyazdani42/nvim-web-devicons'
   use 'kyazdani42/nvim-tree.lua'
+  use 'jose-elias-alvarez/null-ls.nvim'
 
-  -- cmp plugins
-  use "hrsh7th/nvim-cmp" -- The completion plugin
-  use "hrsh7th/cmp-buffer" -- buffer completions
-  use "hrsh7th/cmp-path" -- path completions
-  use "hrsh7th/cmp-cmdline" -- cmdline completions
-  use "saadparwaiz1/cmp_luasnip" -- snippet completions
-
-  -- snippets
-  use "L3MON4D3/LuaSnip" --snippet engine
-  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
-
-  -- LSP
-  use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  -- colorschemes
+  use 'rebelot/kanagawa.nvim'
+  use 'gruvbox-community/gruvbox'
+  use 'catppuccin/nvim'
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
@@ -83,7 +72,27 @@ return packer.startup(function(use)
   use "lewis6991/gitsigns.nvim"
   use 'f-person/git-blame.nvim'
 
+  use {
+    'VonHeikemen/lsp-zero.nvim',
+    requires = {
+      -- LSP Support
+      {'neovim/nvim-lspconfig'},
+      {'williamboman/mason.nvim'},
+      {'williamboman/mason-lspconfig.nvim'},
 
+      -- Autocompletion
+      {'hrsh7th/nvim-cmp'},
+      {'hrsh7th/cmp-buffer'},
+      {'hrsh7th/cmp-path'},
+      {'saadparwaiz1/cmp_luasnip'},
+      {'hrsh7th/cmp-nvim-lsp'},
+      {'hrsh7th/cmp-nvim-lua'},
+
+      -- Snippets
+      {'L3MON4D3/LuaSnip'},
+      {'rafamadriz/friendly-snippets'},
+    }
+  }
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

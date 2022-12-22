@@ -16,3 +16,4 @@ vim.opt.mouse = "a"
 vim.opt.ignorecase = true
 vim.opt.signcolumn = "yes"
 vim.opt.termguicolors = true                    -- set term gui colors (most terminals support this)
+vim.opt.path = vim.opt.path + "**"

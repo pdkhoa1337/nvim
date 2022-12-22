@@ -1,11 +1,2 @@
-require("khoa.options")
-require("khoa.plugins")
-require("khoa.keymaps")
-require("khoa.telescope")
-require("khoa.treesitter")
-require("khoa.gitsign")
-require("khoa.autopair")
-require("khoa.bufferline")
-require("khoa.nvim-tree")
-require("khoa.lsp")
+require("khoa")
 
